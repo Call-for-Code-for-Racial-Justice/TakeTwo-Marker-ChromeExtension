@@ -1,8 +1,16 @@
 # Take 2 Chrome Extension
 
-The Take 2 Chrome extension is part of an MVP for Call For Code (Emb-race). This extension is a method for crowdsourcing racially biased words and phrases in the media so that they can be used to train and improve a machine learning model to detect potential racial bias in content. 
+This repo is part of the [Embrace: Diverse Representation](https://github.com/Call-for-Code/Embrace-Diverse-Representation) stream and our focus is on problem statement 3. We decided to focus on the following two predefined hills:
 
-Our hope for the future is that this is a step towards a more informed media culture that is more aware of racial bias and toxic racism in media content. This is a proof of concept and we are open to ideas/suggestions which can be put forward using the issues section of this repo. We hope you will help us in this community effort:
+1. A media content editor (e.g., audio, gaming, movies, tv, comics, news, publications) can incorporate bias detection and remediation into their creative process to reduce racial bias and improve representation to Gen Z.
+
+2. A social media user can understand the historical and societal context of racial bias and cultural appropriation reflected in their posts in real time.
+
+The Take 2 Chrome extension is part of an MVP for Call For Code (Emb-race). This extension is a method for facilitating the crowdsourcing of words and phrases in online content in order to generate data to a backend database. This data can then be used to train machine learning models for text-based workstreams.
+
+In this case it is used to crowdsource words and phrases that could be racially biased and categorise them. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
+
+It is still very much a work in progress, however our hope for the future is that this is a step towards a more informed media culture that is more aware of racial bias and toxic racism in media content. This is a proof of concept and we are open to ideas/suggestions which can be put forward using the issues section of this repo. We hope you will help us in this community effort:
 
 - As a content contributor to enrich our data by installing the extension and using it.
 - As a developer to help us improve the extension design and functionality to accelerate this project forward.
