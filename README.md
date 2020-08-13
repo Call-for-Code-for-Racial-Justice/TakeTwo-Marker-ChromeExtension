@@ -1,8 +1,8 @@
 # Take 2 Chrome Extension
 
-The Take 2 Chrome extension is part of an MVP for Call For Code (Emb-race). This extension is a method for crowdsourcing racially biased words and phrases in the media so that they can be used to train and improve a machine learning model to detect racial bias in content. 
+The Take 2 Chrome extension is part of an MVP for Call For Code (Emb-race). This extension is a method for crowdsourcing racially biased words and phrases in the media so that they can be used to train and improve a machine learning model to detect potential racial bias in content. 
 
-Our hope for the future is that this is a step towards a media culture that is free of racial bias and toxic racism, further we hope it will eliminate the reinforced racism that can be created through racially biased media content. We hope you will help us in this community effort:
+Our hope for the future is that this is a step towards a more informed media culture that is more aware of racial bias and toxic racism in media content. This is a proof of concept and we are open to ideas/suggestions which can be put forward using the issues section of this repo. We hope you will help us in this community effort:
 
 - As a content contributor to enrich our data by installing the extension and using it.
 - As a developer to help us improve the extension design and functionality to accelerate this project forward.
