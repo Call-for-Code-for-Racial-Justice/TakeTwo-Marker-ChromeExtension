@@ -19,9 +19,9 @@ It is still very much a work in progress, however our hope for the future is tha
 This extension uses the [Highlighter chrome extension](https://github.com/jeromepl/highlighter) library as a basis in order to allow the highlighter functionality for selecting text. 
 
 
-## Start contributing to this project
+## Try out the extension
 
-The following steps will explain how to get started with contributing to our crowdsourced dataset of racially biased text. 
+The following steps will explain how to get started with this extension.
 
 
 ### 1. Install the Take 2 chrome extension
