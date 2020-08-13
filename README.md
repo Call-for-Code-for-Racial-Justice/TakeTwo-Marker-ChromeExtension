@@ -8,7 +8,7 @@ This repo is part of the [Embrace: Diverse Representation](https://github.com/Ca
 
 The Take 2 Chrome extension is part of an MVP for Call For Code (Emb-race). This extension is a method for facilitating the crowdsourcing of words and phrases in online content in order to generate data to a backend database. This data can then be used to train machine learning models for text-based workstreams.
 
-In this case it is used to crowdsource words and phrases that could be racially biased and categorise them. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
+One of the issues that has been identified is the lack of a data on racially biased words and phrases. In this case we use this extension to crowdsource words and phrases that could be racially biased and categorise them. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
 
 It is still very much a work in progress, however our hope for the future is that this is a step towards a more informed media culture that is more aware of racial bias and toxic racism in media content. This is a proof of concept and we are open to ideas/suggestions which can be put forward using the issues section of this repo. We hope you will help us in this community effort:
 
