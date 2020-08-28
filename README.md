@@ -34,17 +34,17 @@ This project aims to facilitate **content consumers** to:
 
 </br>
 
-## Description of the Take Two Project
+## Description of the TakeTwo Project
 
-The Take Two solution provides a quick and simple tool for **content platforms** to detect and eliminate racial bias (both overt and subtle) from their content. 
+The TakeTwo solution provides a quick and simple tool for **content platforms** to detect and eliminate racial bias (both overt and subtle) from their content. 
 
 This is underpinned by a crowd-sourced database of words and phrases that are deemed racially biased. These phrases are categorized in order to train an AI model on the significance of the context in which the language was used. Contributors to the project can be part of the crowdsourcing process by installing a browser extension. This repository is the Chrome extension that can be used to facilitate the data capture process, which is used for modelling. 
 
 
 There are a number of other repositories related to this project:
 
-- [Take Two API](https://github.com/embrace-call-for-code/taketwo-marker-chromeextension) - Code for the Chrome extension used to crowdsource data for training the ML model. 
-- [Take Two Data Science](https://github.com/embrace-call-for-code/taketwo-api) - Contains data science work for building and training the model.
+- [TakeTwo API](https://github.com/embrace-call-for-code/taketwo-marker-chromeextension) - Code for the Chrome extension used to crowdsource data for training the ML model. 
+- [TakeTwo Data Science](https://github.com/embrace-call-for-code/taketwo-api) - Contains data science work for building and training the model.
 
 </br>
 
@@ -54,19 +54,19 @@ This is a javascript extension.
 
 This extension uses the [Highlighter chrome extension](https://github.com/jeromepl/highlighter) library as a basis in order to allow the highlighter functionality for selecting text. 
 
-### Take Two Architecture
+### TakeTwo Architecture
 
-This Chrome extension (highlighted in the following diagram) is part of the Call For Code Take Two Project. This extension is used to enable the crowdsourcing of data for use in training an ML model. This extension aims to make it as easy as possible for content consumers who would like to contribute to this initiative to do so quickly and privately. 
+This Chrome extension (highlighted in the following diagram) is part of the Call For Code TakeTwo Project. This extension is used to enable the crowdsourcing of data for use in training an ML model. This extension aims to make it as easy as possible for content consumers who would like to contribute to this initiative to do so quickly and privately. 
 
 ![](images/architecture-chrome.png)
 
 </br>
 
-## Description of Take Two Chrome Extension
+## Description of TakeTwo Chrome Extension
 
 One of the issues that was identified early on in trying to build a model that can detect racial bias, was the lack of a data on racially biased words and phrases. 
 
-The Take Two Chrome browser extension is a plugin to facilitate crowdsourcing words and phrases that could be racially biased. The words and phrases can be categorised. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
+The TakeTwo Chrome browser extension is a plugin to facilitate crowdsourcing words and phrases that could be racially biased. The words and phrases can be categorised. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
 
 The words and phrases, along with their category, are sent to a backend database via an API. The data is used to train an ML text classification model on the significance of the context in which the language was used. 
 
@@ -92,7 +92,7 @@ This project has defined a number of categories of racial bias, which are used b
 - Racial Slur
 - Othering
 
-Definitions of these categories can be found on the Take Two webpage. 
+Definitions of these categories can be found on the TakeTwo webpage. 
 
 </br>
 
