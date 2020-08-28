@@ -101,7 +101,7 @@ Definitions of these categories can be found on the TakeTwo webpage.
 The following steps will explain how to get started with this extension.
 
 
-### 1. Install the Take 2 chrome extension
+### 1. Install the TakeTwo chrome extension
 
 You will need the chrome browser, which can be installed [here](https://www.google.co.uk/chrome/?brand=CHBD&gclid=Cj0KCQjwjer4BRCZARIsABK4QeVAQkotXkLJlBvJS2V7R2q9__Gk3PchSyhorcBNAZXx7JJwbDeRrBYaAk3TEALw_wcB&gclsrc=aw.ds). 
 
