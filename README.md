@@ -1,5 +1,9 @@
 ![](images/logoblack.png)
 
+[TakeTwo Website](https://w3.ibm.com/w3publisher/take-two)
+</br>
+[TakeTwo Video (Password Needed)]()
+
 ## Emb(race): Diverse Representation
 
 Technology has the power to drive action. And right now, a call to action is needed to eradicate racism. **Black lives matter.**
