@@ -2,7 +2,7 @@
 
 [TakeTwo Website](https://w3.ibm.com/w3publisher/take-two)
 </br>
-[TakeTwo Video (Password Needed)]()
+[TakeTwo Video (Password Needed)](https://vimeo.com/453095359)
 
 ## Emb(race): Diverse Representation
 
