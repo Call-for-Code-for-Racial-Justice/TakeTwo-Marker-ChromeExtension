@@ -76,6 +76,8 @@ The words and phrases, along with their category, are sent to a backend database
 
 Contributors to the project can be part of the crowdsourcing process by installing a browser extension.
 
+The extension intermittently serves an existing record from the database to the user and asks them to highlight and classify any racial bias present. This can then be used to verify the merit of an existing mark. This enhances the reliability of the model. 
+
 ### Data
 
 The Chrome extension sends the following data to a backend database via an API: 
