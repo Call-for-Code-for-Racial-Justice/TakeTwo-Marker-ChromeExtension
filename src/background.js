@@ -1,7 +1,5 @@
 "use strict";
 
-
-var API_URL = "http://taketwo-webapi-route-embrace-dev-js.embrace-dev-ocp43-vpc-7ec5d722a0ab3f463fdc90eeb94dbc70-0000.us-east.containers.appdomain.cloud";
 var API_URL = "http://localhost:8000";
 var USER_ID = "tester"
 
