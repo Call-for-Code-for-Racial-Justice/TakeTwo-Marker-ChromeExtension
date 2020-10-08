@@ -30,9 +30,9 @@ We have identified the following issues currently faced by **content consumers**
 - Tired of seeing racially biased posts on social media channels and in environments like online forums (e.g gaming).
 - Lack of content which is fairly representative.
 
-This project aims to facilitate **content consumers** to:
+This project aims to facilitate **content platforms** to:
 
-- Contribute to a crowdsourced dataset of racially biased terms that can be used to eliminate racial bias from content platforms. 
+- Use a community sourced dataset of racially biased terms in their work to eliminate racial bias from content platforms. 
 - Speed removal of racially biased and offensive language from online mediums. 
 - Help content platforms diversify content and understand how to make their content more inclusive.
 
