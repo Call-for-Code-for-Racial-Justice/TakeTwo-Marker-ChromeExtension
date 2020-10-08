@@ -42,7 +42,7 @@ This project aims to facilitate **content platforms** to:
 
 The TakeTwo solution provides a quick and simple tool for **content platforms** to detect and eliminate racial bias (both overt and subtle) from their content. 
 
-This is underpinned by a crowd-sourced database of words and phrases that are deemed racially biased. These phrases are categorized in order to train an AI model on the significance of the context in which the language was used. Trusted contributors to the data capture process can contribute words and phrases by installing a browser extension that allows for data capture through a browser. This repository contains the code for this Chrome extension. 
+This is underpinned by a community-sourced database of words and phrases that are deemed racially biased. These phrases are categorized in order to train an AI model on the significance of the context in which the language was used. Trusted contributors to the data capture process can contribute words and phrases by installing a browser extension that allows for data capture through a browser. This repository contains the code for this Chrome extension. 
 
 
 There are a number of other repositories related to this project:
@@ -68,7 +68,7 @@ This Chrome extension (highlighted in the following diagram) is part of the Call
 
 ## Description of TakeTwo Chrome Extension
 
-One of the issues that was identified early on in trying to build a model that can detect racial bias, was the lack of a data on racially biased words and phrases. 
+One of the issues that was identified early on in trying to build a model that can detect racial bias, was the lack of a dataset on racially biased (particularly subtle rather than overt) words and phrases. 
 
 The TakeTwo Chrome browser extension is a plugin to facilitate the capture and categorisation words and phrases that could be racially biased through a browser. The words and phrases can be categorised. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
 
