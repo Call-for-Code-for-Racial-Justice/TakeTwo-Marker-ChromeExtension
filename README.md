@@ -42,7 +42,7 @@ This project aims to facilitate **content consumers** to:
 
 The TakeTwo solution provides a quick and simple tool for **content platforms** to detect and eliminate racial bias (both overt and subtle) from their content. 
 
-This is underpinned by a crowd-sourced database of words and phrases that are deemed racially biased. These phrases are categorized in order to train an AI model on the significance of the context in which the language was used. Contributors to the project can be part of the crowdsourcing process by installing a browser extension. This repository is the Chrome extension that can be used to facilitate the data capture process, which is used for modelling. 
+This is underpinned by a crowd-sourced database of words and phrases that are deemed racially biased. These phrases are categorized in order to train an AI model on the significance of the context in which the language was used. Trusted contributors to the data capture process can contribute words and phrases by installing a browser extension that allows for data capture through a browser. This repository contains the code for this Chrome extension. 
 
 
 There are a number of other repositories related to this project:
@@ -60,7 +60,7 @@ This extension uses the [Highlighter chrome extension](https://github.com/jerome
 
 ### TakeTwo Architecture
 
-This Chrome extension (highlighted in the following diagram) is part of the Call For Code TakeTwo Project. This extension is used to enable the crowdsourcing of data for use in training an ML model. This extension aims to make it as easy as possible for content consumers who would like to contribute to this initiative to do so quickly and privately. 
+This Chrome extension (highlighted in the following diagram) is part of the Call For Code TakeTwo Project. This extension is used to enable the crowdsourcing of data for use in training an ML model. This extension aims to make it as easy as possible for community members who would like to contribute to this initiative to do so quickly and privately.
 
 ![](images/architecture-chrome.png)
 
@@ -70,13 +70,11 @@ This Chrome extension (highlighted in the following diagram) is part of the Call
 
 One of the issues that was identified early on in trying to build a model that can detect racial bias, was the lack of a data on racially biased words and phrases. 
 
-The TakeTwo Chrome browser extension is a plugin to facilitate crowdsourcing words and phrases that could be racially biased. The words and phrases can be categorised. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
+The TakeTwo Chrome browser extension is a plugin to facilitate the capture and categorisation words and phrases that could be racially biased through a browser. The words and phrases can be categorised. The categories are defined in our [API](https://github.com/embrace-call-for-code/taketwo-webapi). 
 
 The words and phrases, along with their category, are sent to a backend database via an API. The data is used to train an ML text classification model on the significance of the context in which the language was used. 
 
-Contributors to the project can be part of the crowdsourcing process by installing a browser extension.
-
-The extension intermittently serves an existing record from the database to the user and asks them to highlight and classify any racial bias present. This can then be used to verify the merit of an existing mark. This enhances the reliability of the model. 
+The extension intermittently serves an existing data record from the database to the user and asks them to highlight and classify any racial bias present. This can then be used to verify the merit of an existing mark. This enhances the reliability of the model. 
 
 ### Data
 
@@ -111,7 +109,6 @@ The following steps will explain how to get started with this extension.
 
 You will need the chrome browser, which can be installed [here](https://www.google.co.uk/chrome/?brand=CHBD&gclid=Cj0KCQjwjer4BRCZARIsABK4QeVAQkotXkLJlBvJS2V7R2q9__Gk3PchSyhorcBNAZXx7JJwbDeRrBYaAk3TEALw_wcB&gclsrc=aw.ds). 
 
-In the future we hope this extension will be available via the chrome store, however for now you will need to install from a local directory. 
 
 - Clone this git repo. 
 - In order to install the chrome plugin, navigate to `chrome://extensions` and then select the **load unpacked** option. 
@@ -144,8 +141,8 @@ We also hope to expand the project to enable detection of racial bias in audio a
 
 We hope you will help us in this open source community effort:
 
-- As a content contributor to enrich our data by installing the extension and using it.
-- As a developer to help us improve the extension design and functionality to accelerate this project forward.
+- As a community member who can help with the data capture of words and phrases.
+- As a developer to help us improve the extension design and functionality to accelerate this project forward. We have a range of features we would like help with in the issues section of this repo. 
 
 ## Authors
 
