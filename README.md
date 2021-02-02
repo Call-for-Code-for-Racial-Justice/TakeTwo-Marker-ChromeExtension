@@ -112,7 +112,7 @@ You will need the chrome browser, which can be installed [here](https://www.goog
 
 - Clone this git repo. 
 - In order to install the chrome plugin, navigate to `chrome://extensions` and then select the **load unpacked** option. 
-- Navigate to the repo folder and `select`. You will now have the browser plug-in available to you. 
+- Navigate to the `src` folder in the cloned repo and `select`. You will now have the browser plug-in available to you. 
 
 ### 2. Highlight text
 
