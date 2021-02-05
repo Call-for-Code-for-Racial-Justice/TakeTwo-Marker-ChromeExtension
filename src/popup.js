@@ -15,6 +15,7 @@ var removeConfirmBtn = document.getElementById('remove-confirm');
 var removeCancelBtn = document.getElementById('remove-cancel');
 var copyBtn = document.getElementById('copy-highlights');
 var highlightsListEl = document.getElementById('highlights-list');
+var autenticateBtn = document.getElementById('authenticate');
 
 var apiEl = document.getElementById('api');
 var apiSaveBtn = document.getElementById('api-save-button');
@@ -44,6 +45,14 @@ function toggleHighlighterCursor() {
     backgroundPage.trackEvent('toggle-cursor-source', 'popup');
     backgroundPage.toggleHighlighterCursor();
     window.close();
+}
+
+function authenticate(){
+
+    var username = document.getElementById('authenticate-form-email').value;
+    var password = document.getElementById('authenticate-form-password').value;
+    //TODO: add error checking for username and password
+    backgroundPage.authenticate(username, password);
 }
 
 (function preventWarning() {
@@ -106,6 +115,7 @@ closeWarningBtn.addEventListener('click', closeWarning);
 removeConfirmBtn.addEventListener('click', removeHighlights);
 removeCancelBtn.addEventListener('click', closeConfirmation);
 copyBtn.addEventListener('click', copyHighlights);
+autenticateBtn.addEventListener('click', authenticate);
 
 chrome.storage.sync.get('color', (values) => {
     var color = values.color;
