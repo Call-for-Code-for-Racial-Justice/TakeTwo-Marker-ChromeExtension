@@ -52,28 +52,55 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             .then(function () {
                 // always executed
             });
-        return true;
+        // return true;
     }
     if (request.action == "saveToServer") {
-        axios.post(API_URL + '/mark', {
-            user_id: USER_ID,
-            flagged_string: request.string,
-            category: request.category,
-            url: request.url
+
+                // get the token from local storage and send as bearer authentication for this end point
+        // if token is not present, send message back to the CFE and ask to show the login form
+
+        chrome.storage.sync.get(['token'], function (result) {
+            console.log('Value currently is ' + result.token);
+            var token = result.token;
+
+            if (token != null && token.length > 0) {
+                // send request
+
+                var data = {
+                    user_id: USER_ID,
+                    flagged_string: request.string,
+                    category: request.category,
+                    url: request.url
+                   };
+
+                var config = {
+                    method: 'post',
+                    url: API_URL + '/mark',
+                    headers: { 
+                      'Authorization': `Bearer ${token}`
+                      //'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data : data
+                  };
+                
+                axios(config)
+                    .then(function (response) {
+                        // handle success
+                        sendResponse(response);
+                        // return true;
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                        // return false;
+                    })
+                    .then(function () {
+                        // always executed
+                    });
+            }
+            // return true;
         })
-            .then(function (response) {
-                // handle success
-                // console.log(response);
-                sendResponse(response)
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
-        return true;
+        
     }
     if (request.action == "removeFromServer") {
 
@@ -95,8 +122,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     method: 'delete',
                     url: API_URL + '/mark',
                     headers: { 
-                      'Authorization': `Bearer ${token}`, 
-                      'Content-Type': 'application/x-www-form-urlencoded'
+                      'Authorization': `Bearer ${token}`
+                      //'Content-Type': 'application/x-www-form-urlencoded'
                     },
                     data : data
                   };
@@ -112,43 +139,91 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     .then(function (response) {
                         // handle success
                         // console.log(response);
-                        return true;
+                        // return true;
                     })
                     .catch(function (error) {
                         // handle error
                         console.log(error);
-                        return false;
+                        // return false;
                     })
                     .then(function () {
                         // always executed
                     });
             }
             console.log('you are not logged in!')
-            return false;
+            // return false;
         })
     }
     if (request.action == "updateOnServer") {
-        axios.put(API_URL + '/mark/' + request._id, {
 
-            user_id: "",
-            flagged_string: "",
-            category: request.category,
-            url: ""
+
+        chrome.storage.sync.get(['token'], function (result) {
+            console.log('Value currently is ' + result.token);
+            var token = result.token;
+
+            if (token != null && token.length > 0) {
+                // send request
+
+                console.log(request);
+
+                var data = {
+                    user_id: "",
+                    flagged_string: "",
+                    category: request.category,
+                    url: ""
+                   };
+
+                var config = {
+                    method: 'put',
+                    url: API_URL + '/mark/' + request._id,
+                    headers: { 
+                      'Authorization': `Bearer ${token}`
+                      //'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data : data
+                  };
+                
+                axios(config)
+                    .then(function (response) {
+                        // handle success
+                        sendResponse(response);
+                        // return true;
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                        // return false;
+                    })
+                    .then(function () {
+                        // always executed
+                    });
+            }
+            // return true;
         })
-            .then(function (response) {
-                // handle success
-                // console.log(response);
-                sendResponse(response)
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
-            });
-        return true;
+
+
+        // axios.put(API_URL + '/mark/' + request._id, {
+
+        //     user_id: "",
+        //     flagged_string: "",
+        //     category: request.category,
+        //     url: ""
+        // })
+        //     .then(function (response) {
+        //         // handle success
+        //         // console.log(response);
+        //         sendResponse(response)
+        //     })
+        //     .catch(function (error) {
+        //         // handle error
+        //         console.log(error);
+        //     })
+        //     .then(function () {
+        //         // always executed
+        //     });
+        // // return true;
     }
+    return true;
 });
 
 function highlightTextFromContext() {
