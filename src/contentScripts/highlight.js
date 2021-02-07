@@ -16,13 +16,13 @@
 
         // TODO: Move to storageManager?
         chrome.runtime.sendMessage({ action: "saveToServer", string: selectionString, category: "unset", url: window.location.hostname + window.location.pathname }, function (response) {
-
-            chrome.storage.sync.get('color', (values) => {
-                const color = values.color;
+            // chrome.storage.sync.get('color', (values) => {
+                const color = "#ff0000";
+                console.log("dsfsfsadfs");
                 store(selection, container, window.location.hostname + window.location.pathname, color, response.data.category, response.data._id, (highlightIndex) => {
                     highlight(selectionString, container, selection, color, highlightIndex);
                 });
-            });
+            // });
         });
 
 
