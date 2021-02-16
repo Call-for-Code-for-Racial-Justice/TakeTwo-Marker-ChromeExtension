@@ -2,7 +2,7 @@
 
 The TakeTwo Chrome browser extension is part of the Call for Code for Racial Justice TakeTwo Project. The extension is a plugin to facilitate the capture and categorization of words and phrases that could be racially biased through a browser.
 
-The TakeTwo Chrome javascript extension uses the [Highlighter chrome extension](https://github.com/jeromepl/highlighter) library to allow the highlighter functionality for selecting text.
+The TakeTwo Chrome Javascript extension uses the [Highlighter Chrome extension](https://github.com/jeromepl/highlighter) library to allow the highlighter functionality for selecting text.
 
 This extension is used to enable the crowdsourcing of data for use in training an ML model. This extension aims to make it as easy as possible for community members who would like to contribute to this initiative to do so quickly and privately.
 
@@ -45,13 +45,13 @@ Definitions of these categories can be found on the TakeTwo [webpage](https://gi
 The following steps will explain how to get started with this extension.
 
 
-### 1. Install the TakeTwo chrome extension
+### 1. Install the TakeTwo Chrome extension
 
-You will need the chrome browser, which can be installed [here](https://www.google.com/chrome/).
+You will need the Chrome browser, which can be installed [here](https://www.google.com/chrome/).
 
 
 - Clone this git repo.
-- In order to install the chrome plugin, navigate to `chrome://extensions` and then select the **load unpacked** option.
+- In order to install the Chrome plugin, navigate to `chrome://extensions` and then select the **load unpacked** option.
 - Navigate to the `src` folder in the cloned repo and `select`. You will now have the browser plug-in available to you.
 
 ### 2. Highlight text
