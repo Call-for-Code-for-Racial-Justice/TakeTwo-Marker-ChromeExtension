@@ -6,10 +6,6 @@ The TakeTwo Chrome Javascript extension uses the [Highlighter Chrome extension](
 
 This extension is used to enable the crowdsourcing of data for use in training an ML model. This extension aims to make it as easy as possible for community members who would like to contribute to this initiative to do so quickly and privately.
 
-### TakeTwo Architecture
-
-![](https://raw.githubusercontent.com/Call-for-Code-for-Racial-Justice/TakeTwo/main/images/architecture-overview.png)
-
 ## Description of TakeTwo Chrome Extension
 
 An issue that was identified early on in trying to build a model that can detect racial bias was the lack of a dataset on racially biased words and phrases. In particular, there was a lack of data that could be used to detect subtle phrases within content.
@@ -63,10 +59,10 @@ When in webpage content where you find racially biased words or phrases that are
 ![](/images/toggle-on.png)
 - Highlight the word or phrase by pressing the left mouse button and moving along the text.
 - Once highlighted, a bar showing the categories will appear. Select the most suitable category.
-![](/images/highlight-extension.png)
+![](/images/highlight-extension-contrib.png)
 - To turn off highlight mode, click on the plugin icon and 'Toggle Cursor'.
 - As you highlight, your selections are saved. To delete them, select a highlight and delete using the trashcan icon.
-![](/images/delete-single.png)
+![](/images/delete-single-contrib.png)
 - Alternatively, you can "REMOVE ALL" via the drop-down. This will delete them from the backend database.
 ![](/images/remove-all.png)
 
