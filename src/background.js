@@ -120,12 +120,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
                 var config = {
                     method: 'delete',
-                    url: API_URL + '/mark',
+                    url: API_URL + '/mark?_id='+request._id,
                     headers: { 
                       'Authorization': `Bearer ${token}`
                       //'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    data : data
+                    }
                   };
                 
                 
