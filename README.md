@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue.svg)](https://developer.ibm.com/callforcode/racial-justice/get-started/)
+
 # TakeTwo Solution Starter - Chrome Extension
 
 The TakeTwo Chrome browser extension is part of the Call for Code for Racial Justice TakeTwo Project. The extension is a plugin to facilitate the capture and categorization of words and phrases that could be racially biased through a browser.
