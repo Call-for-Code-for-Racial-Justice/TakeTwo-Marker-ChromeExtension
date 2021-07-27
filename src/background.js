@@ -275,6 +275,8 @@ function authenticate(username, password) {
                 chrome.storage.sync.set({ token: response.data.access_token }, function () {
                     console.log('Value is set to ' + response.data.access_token);
                 });
+                // set user email upon succesful login
+                chrome.storage.sync.set({ user: username }, function () {});
             })
             .catch(function (error) {
                 // handle error
