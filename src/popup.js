@@ -16,6 +16,7 @@ var removeCancelBtn = document.getElementById('remove-cancel');
 var copyBtn = document.getElementById('copy-highlights');
 var highlightsListEl = document.getElementById('highlights-list');
 var autenticateBtn = document.getElementById('authenticate');
+var logoutBtn = document.getElementById('logout');
 
 var apiEl = document.getElementById('api');
 var apiSaveBtn = document.getElementById('api-save-button');
@@ -116,6 +117,7 @@ removeConfirmBtn.addEventListener('click', removeHighlights);
 removeCancelBtn.addEventListener('click', closeConfirmation);
 copyBtn.addEventListener('click', copyHighlights);
 autenticateBtn.addEventListener('click', authenticate);
+logoutBtn.addEventListener('click', backgroundPage.logout);
 
 chrome.storage.sync.get('color', (values) => {
     var color = values.color;
@@ -170,5 +172,13 @@ function clearSelected() {
     }
 }
 
-
-
+window.addEventListener('load', function () {
+    backgroundPage.getUser(function(value) {
+        if (value) {
+            document.getElementById('authenticate-form-email').value = value
+        }
+        else{
+            document.getElementById('authenticate-form-email').value = '';
+        }
+    })
+})
