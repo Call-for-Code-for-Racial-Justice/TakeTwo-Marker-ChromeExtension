@@ -92,13 +92,15 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     .catch(function (error) {
                         // handle error
                         console.log(error);
-                        // return false;
+                        authenticationFalue()
                     })
                     .then(function () {
                         // always executed
                     });
             }
-            // return true;
+            else {
+                authenticationFalue()
+            }
         })
         
     }
@@ -143,13 +145,16 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     .catch(function (error) {
                         // handle error
                         console.log(error);
+                        authenticationFalue()
                         // return false;
                     })
                     .then(function () {
                         // always executed
                     });
             }
-            console.log('you are not logged in!')
+            else {
+                authenticationFalue()
+            }
             // return false;
         })
     }
@@ -191,13 +196,16 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     .catch(function (error) {
                         // handle error
                         console.log(error);
+                        authenticationFalue()
                         // return false;
                     })
                     .then(function () {
                         // always executed
                     });
             }
-            // return true;
+            else {
+                authenticationFalue()
+            }
         })
 
 
@@ -224,6 +232,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
     return true;
 });
+
+function authenticationFalue() {
+    alert("Authentication failure, please login (again)")
+}
 
 function highlightTextFromContext() {
     trackEvent('highlight-source', 'context-menu');
@@ -266,29 +278,31 @@ function authenticate(username, password) {
         console.log('chrome.storage.token: ' + result.token);
         token = result.token;
 
-        // if token is empty, get it from the api
-        if (token != null && token.length > 0) {
-            // use it
-        } else {
-            axios.post(API_URL + '/token', formData)
-                .then(function (response) {
-                    // response came with with 200. 
-                    // store the access token in local storage
-                    console.log(`Token: ${response.data.access_token}`);
-                    // chrome.storage.sync.set({ token: response.data.access_token });
-                    chrome.storage.sync.set({ token: response.data.access_token }, function () {
-                        console.log('Value is set to ' + response.data.access_token);
-                    });
-                })
-                .catch(function (error) {
-                    // handle error
-                    console.log(`Something went wrong. Error status: ${error.response.status}`);
-                })
-                .then(function () {
-                    // always executed
+        axios.post(API_URL + '/token', formData)
+            .then(function (response) {
+                // response came with with 200. 
+                // store the access token in local storage
+                console.log(`Token: ${response.data.access_token}`);
+                // chrome.storage.sync.set({ token: response.data.access_token });
+                chrome.storage.sync.set({ token: response.data.access_token }, function () {
+                    console.log('Value is set to ' + response.data.access_token);
                 });
-        }
+                // set user email upon succesful login
+                chrome.storage.sync.set({ user: username }, function () {});
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(`Something went wrong. Error status: ${error.response.status}`);
+            })
+            .then(function () {
+                // always executed
+            });
     });
+}
+
+function logout() {
+    chrome.storage.sync.remove('token',()=>{});
+    chrome.storage.sync.remove('user',()=>{});
 }
 
 function showHighlight(highlightId) {
@@ -334,4 +348,10 @@ function setUserId() {
 
 function getUserId() {
 
+}
+
+function getUser(callBack) {
+    chrome.storage.sync.get('user', function (value) {
+        callBack(value.user);
+    });
 }
