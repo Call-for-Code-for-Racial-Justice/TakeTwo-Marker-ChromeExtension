@@ -277,7 +277,7 @@ function authenticate(username, password) {
     chrome.storage.sync.get(['token'], function (result) {
         console.log('chrome.storage.token: ' + result.token);
         token = result.token;
-
+        
         axios.post(API_URL + '/token', formData)
             .then(function (response) {
                 // response came with with 200. 
@@ -286,6 +286,12 @@ function authenticate(username, password) {
                 // chrome.storage.sync.set({ token: response.data.access_token });
                 chrome.storage.sync.set({ token: response.data.access_token }, function () {
                     console.log('Value is set to ' + response.data.access_token);
+                    chrome.runtime.sendMessage({
+                        msg: "token", 
+                        data: {
+                            token: response.data.access_token
+                        }
+                    });
                 });
                 // set user email upon succesful login
                 chrome.storage.sync.set({ user: username }, function () {});
@@ -293,9 +299,19 @@ function authenticate(username, password) {
             .catch(function (error) {
                 // handle error
                 console.log(`Something went wrong. Error status: ${error.response.status}`);
+                alert(`Something went wrong. Error status: ${error.response.status}`);
+                
+                chrome.runtime.sendMessage({
+                    msg: "token", 
+                    data: {
+                        token: ''
+                    }
+                });
+                
             })
             .then(function () {
                 // always executed
+                
             });
     });
 }
@@ -303,6 +319,7 @@ function authenticate(username, password) {
 function logout() {
     chrome.storage.sync.remove('token',()=>{});
     chrome.storage.sync.remove('user',()=>{});
+    // check the state of authenticate-form and decide when to make visible
 }
 
 function showHighlight(highlightId) {

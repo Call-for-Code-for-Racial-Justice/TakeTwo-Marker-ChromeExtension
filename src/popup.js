@@ -18,6 +18,8 @@ var highlightsListEl = document.getElementById('highlights-list');
 var autenticateBtn = document.getElementById('authenticate');
 var logoutBtn = document.getElementById('logout');
 
+var authenticateForm = document.getElementById('authenticate-form');
+
 var apiEl = document.getElementById('api');
 var apiSaveBtn = document.getElementById('api-save-button');
 
@@ -56,11 +58,28 @@ function authenticate(){
     backgroundPage.authenticate(username, password);
 }
 
+function logout(){
+    backgroundPage.logout();
+    
+    if( authenticateForm.style.display == "none"){
+        authenticateForm.style.display = "block";
+    }
+    logoutBtn.style.display = "none";
+}
+
 (function preventWarning() {
     // Do not show the warning message on future popup window opens after a user has clicked the 'x' button once
     if (window.localStorage.getItem('refresh-warning-closed')) {
         refreshWarningEl.remove();
     }
+    
+    let token = '';
+    chrome.storage.sync.get(['token'], function (result) {
+        token = result.token;
+        setAuthFormDisplay(token);
+    });
+    
+
 })(); // Automatically trigger. function added for clarity only
 
 function closeWarning() {
@@ -117,7 +136,7 @@ removeConfirmBtn.addEventListener('click', removeHighlights);
 removeCancelBtn.addEventListener('click', closeConfirmation);
 copyBtn.addEventListener('click', copyHighlights);
 autenticateBtn.addEventListener('click', authenticate);
-logoutBtn.addEventListener('click', backgroundPage.logout);
+logoutBtn.addEventListener('click', logout);
 
 chrome.storage.sync.get('color', (values) => {
     var color = values.color;
@@ -135,6 +154,27 @@ chrome.storage.sync.get('color', (values) => {
         }
     });
 });
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request.msg === "token") {
+            let token = request.data.token;
+            setAuthFormDisplay(token);
+        }
+    }
+);
+
+function setAuthFormDisplay(token){
+    if(token){
+        authenticateForm.style.display = "none";
+        logoutBtn.style.display = "block";
+    }else{
+        if( authenticateForm.style.display == "none"){
+            authenticateForm.style.display = "block";
+        }
+        logoutBtn.style.display = "none";
+    }
+}
 
 // shortcutLink.addEventListener('click', () => { // Open the shortcuts Chrome settings page in a new tab
 //     chrome.tabs.create({ url: "chrome://extensions/shortcuts" });
