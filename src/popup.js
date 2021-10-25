@@ -17,9 +17,7 @@ var copyBtn = document.getElementById('copy-highlights');
 var highlightsListEl = document.getElementById('highlights-list');
 var autenticateBtn = document.getElementById('authenticate');
 var logoutBtn = document.getElementById('logout');
-
-var apiEl = document.getElementById('api');
-var apiSaveBtn = document.getElementById('api-save-button');
+ 
 
 function askConfirmation() {
     // Ask confirmation to remove all highlights on the page
@@ -140,12 +138,7 @@ chrome.storage.sync.get('color', (values) => {
 //     chrome.tabs.create({ url: "chrome://extensions/shortcuts" });
 // });
 
-apiSaveBtn.addEventListener('click', () => {
-    backgroundPage.setApiUrl(apiEl.value)
-    apiEl.value = backgroundPage.getApiUrl()
-});
-
-apiEl.value = backgroundPage.getApiUrl()
+ 
 
 // Retrieve the shortcut for the highlight command from the Chrome settings and display it
 // chrome.commands.getAll((commands) => {

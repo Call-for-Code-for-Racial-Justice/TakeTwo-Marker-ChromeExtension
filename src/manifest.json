@@ -41,7 +41,7 @@
             "description": "Highlight selected text"
         }
     },
-
+    "options_page":"options.html",
     "permissions": [
         "tabs",
         "contextMenus",
