@@ -1,0 +1,23 @@
+{
+  "name": "taketwo-marker-chromeextension",
+  "version": "1.0.0",
+  "description": "[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue.svg)](https://callforcode.org/slack) [![Hacktoberfest](https://img.shields.io/badge/Celebrate-Hacktoberfest-orange.svg)](https://call-for-code-for-racial-justice.github.io/Hacktoberfest/#/?id=main)",
+  "main": "src/popup.js",
+  "dependencies": {
+    "jest": "^27.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Call-for-Code-for-Racial-Justice/TakeTwo-Marker-ChromeExtension.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Call-for-Code-for-Racial-Justice/TakeTwo-Marker-ChromeExtension/issues"
+  },
+  "homepage": "https://github.com/Call-for-Code-for-Racial-Justice/TakeTwo-Marker-ChromeExtension#readme"
+}
